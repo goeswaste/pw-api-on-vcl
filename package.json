@@ -1,0 +1,11 @@
+{
+  "name": "pw-api-on-vcl",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}
