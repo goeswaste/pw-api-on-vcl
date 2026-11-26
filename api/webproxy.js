@@ -1,4 +1,5 @@
-const playwright = require('playwright-core');
+//const playwright = require('playwright-core');
+import { chromium } from 'playwright-core';
 
 export default async function handler(req, res) {
     const { url } = req.query;
@@ -13,7 +14,8 @@ export default async function handler(req, res) {
     let browser;
     try {
         // Connect to the remote browser via CDP
-        browser = await playwright.chromium.connectOverCDP(process.env.BROWSER_WS_URL);
+        //browser = await playwright.chromium.connectOverCDP(process.env.BROWSER_WS_URL);
+		browser = await chromium.connectOverCDP(process.env.BROWSER_WS_URL);
         const context = await browser.newContext({
             userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
         });
